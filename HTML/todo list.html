@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List</title>
+  <style>
+    .completed {
+      text-decoration: line-through;
+    }
+    li {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Todo List</h1>
+
+  <div>
+    <input type="text" id="todoInput" placeholder="Add a new todo">
+    <button id="addButton">Add</button>
+  </div>
+
+  <ul id="todoList"></ul>
+
+  <script>
+    const todoInput = document.getElementById('todoInput');
+    const addButton = document.getElementById('addButton');
+    const todoList = document.getElementById('todoList');
+
+    let todos = []; // Array to store todo items
+
+    function renderTodos() {
+      todoList.innerHTML = ''; // Clear the list
+
+      todos.forEach((todo, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = todo.text;
+        if (todo.completed) {
+          listItem.classList.add('completed');
+        }
+
+        listItem.addEventListener('click', () => {
+          todo.completed = !todo.completed;
+          renderTodos();
+        });
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', (event) => {
+          event.stopPropagation(); // Prevent the list item's click event
+          todos.splice(index, 1);
+          renderTodos();
+        });
+
+        listItem.appendChild(deleteButton);
+        todoList.appendChild(listItem);
+      });
+    }
+
+    addButton.addEventListener('click', () => {
+      const todoText = todoInput.value.trim();
+      if (todoText !== '') {
+        todos.push({ text: todoText, completed: false });
+        todoInput.value = '';
+        renderTodos();
+      }
+    });
+
+    todoInput.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault(); //Prevents form submission
+        addButton.click();
+      }
+    });
+
+    renderTodos(); // Initial render
+  </script>
+
+</body>
+</html>
