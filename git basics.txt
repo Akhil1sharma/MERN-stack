@@ -1,0 +1,144 @@
+Git Basics
+Git is a distributed version control system (DVCS) that allows multiple developers to work on a project simultaneously. It tracks changes in files and directories.
+
+Key Concepts:
+Repository (Repo):
+
+A collection of files and directories tracked by Git.
+
+Can be local (on your machine) or remote (on a server like GitHub).
+
+Working Tree:
+
+The current state of your files in the project directory.
+
+Changes made here are not yet tracked by Git.
+
+Staging Area (Index):
+
+A place where you prepare changes before committing them.
+
+Only changes added to the staging area will be included in the next commit.
+
+Commit:
+
+A snapshot of your project at a specific point in time.
+
+Each commit has a unique ID (SHA-1 hash) and a message describing the changes.
+
+Branch:
+
+A parallel version of your project.
+
+Allows you to work on new features or fixes without affecting the main codebase.
+
+Remote:
+
+A shared repository hosted on a server (e.g., GitHub, GitLab).
+
+Used for collaboration and backup.
+
+Merge:
+
+Combines changes from different branches into one.
+
+Rebase:
+
+Moves or combines a sequence of commits to a new base commit.
+
+Used to maintain a linear project history.
+
+Gitignore:
+
+A file that specifies which files or directories Git should ignore (e.g., logs, build files).
+
+Git Commands and Examples
+1. Initialize a Repository
+bash
+Copy
+git init
+Creates a new Git repository in the current directory.
+
+2. Clone a Repository
+bash
+Copy
+git clone <repository-url>
+Copies a remote repository to your local machine.
+
+3. Check Status
+bash
+Copy
+git status
+Shows the current state of the working tree and staging area.
+
+4. Add Files to Staging Area
+bash
+Copy
+git add <file-name>
+Stages a specific file for commit.
+
+bash
+Copy
+git add .
+Stages all changes in the working tree.
+
+5. Commit Changes
+bash
+Copy
+git commit -m "Your commit message"
+Creates a new commit with the changes in the staging area.
+
+6. View Commit History
+bash
+Copy
+git log
+Displays the commit history.
+
+7. Create a Branch
+bash
+Copy
+git branch <branch-name>
+Creates a new branch.
+
+bash
+Copy
+git checkout <branch-name>
+Switches to the specified branch.
+
+bash
+Copy
+git checkout -b <branch-name>
+Creates and switches to a new branch in one command.
+
+8. Merge Branches
+bash
+Copy
+git checkout main
+git merge <branch-name>
+Merges changes from <branch-name> into the main branch.
+
+9. Push to Remote
+bash
+Copy
+git push origin <branch-name>
+Uploads local commits to the remote repository.
+
+10. Pull from Remote
+bash
+Copy
+git pull origin <branch-name>
+Downloads changes from the remote repository and merges them into the local branch.
+
+11. Gitignore
+Create a .gitignore file in the root of your repository and add patterns for files/directories to ignore:
+
+plaintext
+Copy
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore build directory
+build/
