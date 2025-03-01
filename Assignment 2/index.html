@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Navigation -->
+        <nav id="navbar">
+            <header>Technical Documentation</header>
+            <ul>
+                <li><a class="nav-link" href="#introduction">Introduction</a></li>
+                <li><a class="nav-link" href="#what_you_should_already_know">What You Should Already Know</a></li>
+                <li><a class="nav-link" href="#about_topic">About Topic</a></li>
+                <li><a class="nav-link" href="#topic_1">Topic 1</a></li>
+                <li><a class="nav-link" href="#topic_2">Topic 2</a></li>
+                <li><a class="nav-link" href="#armstrong_function">Armstrong Function</a></li>
+            </ul>
+        </nav>
+
+        <!-- Right Content -->
+        <main id="main-doc">
+            <!-- Introduction Section -->
+            <section class="main-section" id="introduction">
+                <header>Introduction</header>
+                <p>Some content about the main topic, for example, Java documentation introduction about the language.</p>
+                <p>Technical documentation should be thorough and to the point. Write about features, comparisons with other languages, etc.</p>
+            </section>
+
+            <!-- What You Should Already Know Section -->
+            <section class="main-section" id="what_you_should_already_know">
+                <header>What You Should Already Know</header>
+                <p>Background information before getting into the topic:</p>
+                <ul>
+                    <li>Prerequisites and assumptions.</li>
+                    <li>Any other content to be covered before learning this topic.</li>
+                </ul>
+            </section>
+
+            <!-- About Topic Section -->
+            <section class="main-section" id="about_topic">
+                <header>About Topic</header>
+                <p>More lines about the topic. For example, how the basic functionality works, features, etc.</p>
+                <p>Some list content:</p>
+                <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                </ul>
+            </section>
+
+            <!-- Topic 1 Section -->
+            <section class="main-section" id="topic_1">
+                <header>Topic 1</header>
+                <p>Getting started with the actual documentation content. This would come in a different color and font, indicating lines of code.</p>
+                <pre><code>function example() {
+    console.log("Hello, World!");
+}</code></pre>
+            </section>
+
+            <!-- Topic 2 Section -->
+            <section class="main-section" id="topic_2">
+                <header>Topic 2</header>
+                <p>Another topic about the main topic, for example, if the topic is Java, then it could be variables or data types in Java.</p>
+                <pre><code>int number = 10;
+String text = "Hello";</code></pre>
+            </section>
+
+            <!-- Armstrong Function Section -->
+            <section class="main-section" id="armstrong_function">
+                <header>Armstrong Function</header>
+                <p>This function checks whether the input number is an Armstrong number or not.</p>
+                <pre><code>function isArmstrong(number) {
+    let sum = 0;
+    let temp = number;
+    const length = number.toString().length;
+    while (temp > 0) {
+        let digit = temp % 10;
+        sum += Math.pow(digit, length);
+        temp = Math.floor(temp / 10);
+    }
+    return sum === number;
+}</code></pre>
+                <p><strong>Parameters:</strong></p>
+                <ul>
+                    <li><strong>Name:</strong> number</li>
+                    <li><strong>Type:</strong> Number</li>
+                    <li><strong>Description:</strong> The input number to apply the check on (can be of any length).</li>
+                </ul>
+                <p><strong>Returns:</strong></p>
+                <ul>
+                    <li><strong>Type:</strong> Boolean</li>
+                    <li><strong>Description:</strong> If the input is an Armstrong number, it will return <code>true</code>; otherwise, <code>false</code>.</li>
+                </ul>
+                <p><strong>Author:</strong> Ankit Choudhary</p>
+                <p><strong>License:</strong> MIT</p>
+                <p><strong>Source:</strong> <code>index.js, line 65</code></p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
