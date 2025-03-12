@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Activity Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #username {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #search-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #search-button:hover {
+            background-color: #0056b3;
+        }
+        .activity-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>GitHub Activity Viewer</h1>
+
+    <!-- Search Container -->
+    <div class="search-container">
+        <input type="text" id="username" placeholder="Enter GitHub Username">
+        <button id="search-button">Search</button>
+        <!-- Autocomplete dropdown -->
+        <div id="autocomplete-list" class="autocomplete-items"></div>
+    </div>
+
+    <!-- Activity Container -->
+    <div class="activity-container" id="activity-container">
+        <!-- GitHub activity will be dynamically inserted here -->
+        <p>Enter a GitHub username to view their recent activity.</p>
+    </div>
+
+    <script>
+        // JavaScript will go here for API calls, autocomplete, and rendering activity
+        // Example:
+        // 1. Fetch GitHub activity using the API
+        // 2. Implement autocomplete using search history
+        // 3. Render activity in the activity-container
+    </script>
+</body>
+</html>
