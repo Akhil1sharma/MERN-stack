@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -12,7 +12,7 @@ body {
     display: flex;
 }
 
-/* Left Navigation */
+
 #navbar {
     width: 250px;
     background: #333;
@@ -52,7 +52,6 @@ body {
     text-decoration: underline;
 }
 
-/* Right Content */
 #main-doc {
     margin-left: 270px;
     padding: 20px;
@@ -84,7 +83,7 @@ body {
     margin: 10px 0;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -101,7 +100,7 @@ body {
     }
 }
 
-/* Smooth Scrolling */
+
 html {
     scroll-behavior: smooth;
 }
