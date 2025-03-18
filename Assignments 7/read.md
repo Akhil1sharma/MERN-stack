@@ -71,8 +71,7 @@ console.log(obj.a);
 
 8.-implementation of the function that generates a random number between two ranges:
 
-javascript
-Copy
+
 function randomInTwoRanges(min1, max1, min2, max2) {
     // Generate a random number in the first range
     const range1 = Math.floor(Math.random() * (max1 - min1 + 1)) + min1;
