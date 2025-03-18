@@ -1,0 +1,95 @@
+codes
+interface Todo {
+  name: string;
+  description: string;
+  done: boolean;
+}
+
+let todos: Todo[] = [];
+
+function add(name: string, description: string): number {
+  return todos.push({
+    name: name,
+    description: description,
+    done: false,
+  });
+}
+
+function remove(index: number): Todo[] {
+  return todos.splice(index, 1);
+}
+
+function list(): void {
+  todos.forEach((todo: Todo, index: number) => {
+    console.log(`${index} - ${todo.name}`);
+  });
+}
+
+function update(index: number, name: string, description: string): Todo {
+  todos[index].name = name;
+  todos[index].description = description;
+  return todos[index];
+}
+
+1. Define the `Todo` Type
+A single `Todo` object has the following properties:
+- `name`: A string representing the task name.
+- `description`: A string representing the task description.
+- `done`: A boolean indicating whether the task is completed.
+
+interface Todo {
+  name: string;
+  description: string;
+  done: boolean;
+}
+
+2. Define the `todos` Array
+The `todos` array will store objects of type `Todo`.
+
+let todos: Todo[] = [];
+
+3. Define Types for Each Function
+
+add` Function
+- Takes two parameters: `name` (string) and `description` (string).
+- Returns a `number` (the new length of the `todos` array after pushing the new `Todo` object).
+
+function add(name: string, description: string): number {
+  return todos.push({
+    name: name,
+    description: description,
+    done: false,
+  });
+}
+
+
+`remove` Function
+- Takes one parameter: `index` (number).
+- Returns an array of `Todo` objects (the removed elements).
+
+function remove(index: number): Todo[] {
+  return todos.splice(index, 1);
+}
+
+list` Function
+- Takes no parameters.
+- Returns `void` (since it only logs to the console).
+
+function list(): void {
+  todos.forEach((todo: Todo, index: number) => {
+    console.log(`${index} - ${todo.name}`);
+  });
+}
+`update` Function**
+- Takes three parameters: `index` (number), `name` (string), and `description` (string).
+- Returns the updated `Todo` object.
+
+
+function update(index: number, name: string, description: string): Todo {
+  todos[index].name = name;
+  todos[index].description = description;
+  return todos[index];
+}
+
+
+
