@@ -34,7 +34,7 @@ const animationConfig = {
   fill: 'forwards'
 };
 
-// Function to animate an image and return a Promise
+
 function animateImage(imageId) {
   const image = document.querySelector(`#${imageId}`);
   const animationObject = image.animate(animation, animationConfig);
@@ -42,7 +42,7 @@ function animateImage(imageId) {
   return animationObject.finished; // Returns a Promise
 }
 
-// Animate images sequentially using Promises
+
 animateImage('image1')
   .then(() => animateImage('image2'))
   .then(() => animateImage('image3'))
