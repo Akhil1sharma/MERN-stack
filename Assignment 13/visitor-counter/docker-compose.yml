@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  redis:
+    image: "redis:alpine"
+    container_name: redis
+    ports:
+      - "6379:6379"  # Expose port for external access (optional, only for debugging)
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "4000:4000" # Expose port for external access (optional, only for debugging)
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+
+  frontend:
+    build: ./frontend/my-app
+    container_name: frontend-my-app
+    ports:
+      - "3000:3000" # Expose port for external access
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_API_URL=/api  #Important: Define this environment variable
+
