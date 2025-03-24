@@ -80,7 +80,7 @@
 
     <!-- Search Container -->
     <div class="search-container">
-        <input type="text" id="username" placeholder="Enter GitHub Username">
+        <input type="text" id="username" placeholder="Enter GitHub Username"> //1
         <button id="search-button">Search</button>
         <!-- Autocomplete dropdown -->
         <div id="autocomplete-list" class="autocomplete-items"></div>
@@ -99,7 +99,7 @@
 
         let searchHistory = [];
 
-        // Fetch GitHub activity
+        //4 &5 Fetch GitHub activity
         async function fetchGitHubActivity(username) {
             try {
                 const response = await fetch(`https://api.github.com/users/${username}/events/public`);
@@ -112,7 +112,7 @@
             }
         }
 
-        // Render activity
+        //6 Render activity
         function renderActivity(activity) {
             if (!activity || activity.length === 0) {
                 activityContainer.innerHTML = '<p>No recent activity found for this user.</p>';
@@ -129,12 +129,12 @@
                 .join('');
         }
 
-        // Handle search
-        searchButton.addEventListener('click', async () => {
+        // 2 Handle search
+        searchButton.addEventListener('click', async () => {    
             const username = usernameInput.value.trim();
             if (!username) return;
 
-            const activity = await fetchGitHubActivity(username);
+      //3      const activity = await fetchGitHubActivity(username);
             if (activity) {
                 renderActivity(activity);
                 addToSearchHistory(username);
@@ -143,7 +143,7 @@
             }
         });
 
-        // Autocomplete functionality
+        //8 Autocomplete functionality
         usernameInput.addEventListener('input', () => {
             const input = usernameInput.value.trim();
             if (!input) {
@@ -157,20 +157,20 @@
                 .join('');
         });
 
-        // Select username from autocomplete
+        //9 Select username from autocomplete
         function selectUsername(username) {
             usernameInput.value = username;
             autocompleteList.innerHTML = '';
         }
 
-        // Add username to search history
+        // 7 Add username to search history
         function addToSearchHistory(username) {
             if (!searchHistory.includes(username)) {
                 searchHistory.push(username);
             }
         }
 
-        // Close autocomplete when clicking outside
+        //10 Close autocomplete when clicking outside
         document.addEventListener('click', (e) => {
             if (e.target !== usernameInput) {
                 autocompleteList.innerHTML = '';
